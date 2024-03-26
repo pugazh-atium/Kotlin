@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlinapplication.databinding.ActivityMainBinding
 import com.example.kotlinapplication.ui.theme.AppConstant
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         fetchArticles()
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     private fun fetchArticles() {
         GlobalScope.launch(Dispatchers.IO) {
             val connection =
